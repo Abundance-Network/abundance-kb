@@ -172,9 +172,9 @@ export async function fetchPolicyResources(): Promise<PolicyResource[]> {
     throw new Error('AIRTABLE_API_KEY environment variable is required')
   }
 
-  const baseId = process.env.AIRTABLE_BASE_ID || DEFAULT_BASE_ID
-  const tableId = process.env.AIRTABLE_TABLE_ID || DEFAULT_TABLE_ID
-  const viewId = process.env.AIRTABLE_VIEW_ID || DEFAULT_VIEW_ID
+  const baseId = process.env.AIRTABLE_AE_BASE_ID || DEFAULT_BASE_ID
+  const tableId = process.env.AIRTABLE_AE_KB_TABLE_ID || DEFAULT_TABLE_ID
+  const viewId = process.env.AIRTABLE_AE_APPROVED_KB_VIEW_ID || DEFAULT_VIEW_ID
 
   const urlBase = `https://api.airtable.com/v0/${encodeURIComponent(baseId)}/${encodeURIComponent(tableId)}`
   const headers = {
