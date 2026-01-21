@@ -190,7 +190,7 @@ export async function fetchPolicyResources(): Promise<PolicyResource[]> {
     const url = `${urlBase}?${params.toString()}`
     const res = await fetch(url, {
       headers,
-      cache: 'no-store'
+      next: { revalidate: 300 }
     })
 
     if (!res.ok) {
